@@ -8,12 +8,12 @@ function Model(props){
   const { scene } = useGLTF("/goblin.glb");
   scene.traverse((child) => {
     if (child.isMesh) {
-      child.material = new MeshStandardMaterial({ color: 'red', flatShading: true }); // Set your desired color here
+      child.material = new MeshStandardMaterial({ color: 'red' }); // Set your desired color here
     }
   });
 
   return <primitive object={scene} {...props} />
-    
+   
 }
 
 export const Car = () => {
@@ -24,7 +24,7 @@ export const Car = () => {
       <Canvas className='' dpr={[3, 5]} shadows camera={{ fov: 45 }} style={{ "width": "92rem", "height": "36rem" , "paddingLeft":"5rem" }} >
         <color attach="background" args={["#101010"]} />
         <PresentationControls speed={2} global zoom={3} polar={[-1, Math.PI / 4]}>
-          <Stage environment={null}>
+          <Stage environment={'sunset'}>
           <Model scale={0.001} rotation={[0, Math.PI, 0]} />
           </Stage>
         </PresentationControls>
