@@ -13,7 +13,7 @@ function Model(props){
   });
 
   return <primitive object={scene} {...props} />
-   
+    
 }
 
 export const Car = () => {
